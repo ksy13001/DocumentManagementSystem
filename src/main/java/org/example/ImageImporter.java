@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.example.Attributes.HEIGHT;
+import static org.example.Attributes.WIDTH;
+
 public class ImageImporter implements Importer{
 
     @Override
@@ -15,8 +18,8 @@ public class ImageImporter implements Importer{
         attributes.put("PATH", file.getAbsolutePath());
 
         final BufferedImage image = ImageIO.read(file);
-        attributes.put("WIDTH", String.valueOf(image.getWidth()));
-        attributes.put("HEIGHT", String.valueOf(image.getHeight()));
+        attributes.put(WIDTH, String.valueOf(image.getWidth()));
+        attributes.put(HEIGHT, String.valueOf(image.getHeight()));
         attributes.put("TYPE", "IMAGE");
 
         return new Document(attributes);
