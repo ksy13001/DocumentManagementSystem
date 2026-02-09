@@ -15,8 +15,9 @@ public class DocumentManagementSystem {
 
     public DocumentManagementSystem(){
         extensionToImporter.put("jpg", new ImageImporter());
-        extensionToImporter.put("report", new ImageImporter());
-        extensionToImporter.put("letter", new ImageImporter());
+        extensionToImporter.put("report", new ReportImporter());
+        extensionToImporter.put("letter", new LetterImporter());
+        extensionToImporter.put("invoice", new InvoiceImporter());
     }
 
     void importFile(String path) throws IOException {
@@ -40,6 +41,6 @@ public class DocumentManagementSystem {
     }
 
     List<Document> content(){
-        return null;
+        return documents;
     }
 }
